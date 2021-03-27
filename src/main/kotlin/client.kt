@@ -46,7 +46,7 @@ fun tree(
   random: Random
 ) {
   val end = start + Polar(angle, growth).cartesian
-  drawBranch(start, end, growth * 5.0)
+  drawBranch(start, end, width = growth * 5.0)
   if (growth > branchingThreshold) {
     (0 until branchCount).forEach {
       tree(
