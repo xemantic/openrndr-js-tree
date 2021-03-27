@@ -1,1 +1,1 @@
-rootProject.name = "openrndr-js"
+rootProject.name = "openrndr-js-tree"

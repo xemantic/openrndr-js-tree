@@ -14,7 +14,7 @@ dependencies {
     testImplementation(kotlin("test-js"))
     testImplementation("io.kotest:kotest-assertions-core:4.4.3")
     // TODO I still need to figure out why -js suffix is needed here, it shouldn't I guess some metadata is not propagated
-    implementation("org.openrndr:openrndr-math-js:0.3.33-dev.664+openrndrMathAsKotlinMultiplatformLib.0ee960e")
+    implementation("org.openrndr:openrndr-math-js:0.4.0-SNAPSHOT")
 }
 
 kotlin {
