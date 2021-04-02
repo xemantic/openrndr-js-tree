@@ -1,38 +1,34 @@
 plugins {
-    kotlin("js") version "1.4.31"
+    kotlin("js") version "1.4.32"
 }
 
-group = "org.openrndr"
+group = "com.xemantic.demo"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenLocal() // needed for now to load locally build openrndr-math
+    mavenLocal()
     mavenCentral()
+    maven(url = "https://dl.bintray.com/openrndr/openrndr") {
+        metadataSources {
+            gradleMetadata()
+        }
+    }
 }
 
 dependencies {
     testImplementation(kotlin("test-js"))
     testImplementation("io.kotest:kotest-assertions-core:4.4.3")
-    // TODO I still need to figure out why -js suffix is needed here, it shouldn't I guess some metadata is not propagated
-    implementation("org.openrndr:openrndr-math-js:0.4.0-SNAPSHOT")
+    implementation("org.openrndr:openrndr-math:0.3.47-rc.6")
 }
 
 kotlin {
-    js(IR) {
+    js {
         browser {
+            @Suppress("EXPERIMENTAL_API_USAGE")
+            distribution {
+                directory = file("$projectDir/docs/")
+            }
             binaries.executable()
-            webpackTask {
-             //   cssSupport.enabled = true
-            }
-            runTask {
-              //  cssSupport.enabled = true
-            }
-            testTask {
-                useKarma {
-                    useChromeHeadless()
-                //    webpackConfig.cssSupport.enabled = true
-                }
-            }
         }
     }
 }
