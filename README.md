@@ -1,6 +1,6 @@
 # openrndr-js = OPENRNDR + Kotlin running in JavaScript
 
-**Website/Demo:** :fireworks: https://xemantic.github.io/openrndr-js :sparkler:
+**Website/Demo:** :fireworks: https://xemantic.github.io/openrndr-js-tree :sparkler:
 
 ## How to use it?
 
